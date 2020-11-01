@@ -1,0 +1,54 @@
+.slider {
+    position: relative;
+    border: 1px solid #000;
+    width: 1000px;
+    height: 400px;
+    background-color: #ddd;
+    /* overflow: hidden; */
+}
+
+img {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+img.active {
+    display: block;
+}
+
+                        /* side switch */
+
+.switch_left, .switch_right {
+    position: absolute;
+    cursor: pointer;
+}
+
+.switch_left {
+    top: 50%;
+    left: 20px;
+}
+
+.switch_right {
+    top: 50%;
+    right: 20px;
+}
+
+.switch_left i, .switch_right i{
+    color: #fff;
+    font-size: 40px;
+}
+
+                        /* switches below */
+
+.switches_below {
+    bottom: 20px;
+    left: 50%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.radio_button {
+    margin-right: 7px;
+}
