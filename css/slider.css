@@ -1,26 +1,37 @@
 .slider {
     position: relative;
     border: 1px solid #000;
+    border-radius: 10px;
     width: 1000px;
     height: 400px;
     background-color: #ddd;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 img {
-    display: none;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    z-index: 0;
+    top: -30x;
+    left: -30px;
+    width: 120%;
+    height: 120%;
+    transition: all 1.5s ease-in;
 }
 
 img.active {
-    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0x;
+    left: 0px;
+    width: 100%;
+    height: 100%;
 }
 
                         /* side switch */
 
 .switch_left, .switch_right {
     position: absolute;
+    z-index: 2;
     cursor: pointer;
 }
 
@@ -45,6 +56,7 @@ img.active {
     bottom: 20px;
     left: 50%;
     position: absolute;
+    z-index: 2;
     display: flex;
     flex-direction: row;
 }

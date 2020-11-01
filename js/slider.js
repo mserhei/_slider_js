@@ -57,8 +57,6 @@ if (allRadioButtons[0].getAttribute(`checked`,`checked`)) {
     images[0].classList.add(`active`);
 }
 
-
-
 // SWITCHES BELOW CLICK
 
 for(let i = 0; i < allRadioButtons.length; i++) {
@@ -67,16 +65,13 @@ for(let i = 0; i < allRadioButtons.length; i++) {
             if (images[j].classList.contains(`active`)) {
                 images[j].classList.remove(`active`);
             }
-            if (!allRadioButtons[j].getAttribute(`checked`,`checked`) === null) {
+            if (allRadioButtons[j].getAttribute(`checked`,`checked`) === `checked`) {
                 allRadioButtons[j].removeAttribute(`checked`);
             }
         }
-
-        if (!images[i].classList.contains(`active`)) {
-
             allRadioButtons[i].setAttribute(`checked`,`checked`);
             images[i].classList.add(`active`);
-        }
+            
     })
 }
 
@@ -88,17 +83,32 @@ leftArrow.addEventListener(`click`, () => {
     for(let i = 0; i < allRadioButtons.length; i++) {
 
             if(i === 0 && allRadioButtons[i].getAttribute(`checked`,`checked`) === `checked`) {
-                allRadioButtons[0].removeAttribute(`checked`);
+
+                for(let j = 0; j < images.length; j++) {
+                    if (images[j].classList.contains(`active`)) {
+                        images[j].classList.remove(`active`);
+                    }
+                    if (allRadioButtons[j].getAttribute(`checked`,`checked`) === `checked`) {
+                        allRadioButtons[j].removeAttribute(`checked`);
+                    }
+                }
+                
                 allRadioButtons[allRadioButtons.length - 1].setAttribute(`checked`,`checked`);
-                images[0].classList.remove(`active`);
                 images[images.length - 1].classList.add(`active`);
                 return;
 
             } else if(i !== 0 && allRadioButtons[i].getAttribute(`checked`,`checked`) === `checked`){
                 
-                allRadioButtons[i].removeAttribute(`checked`);
+                for(let j = 0; j < images.length; j++) {
+                    if (images[j].classList.contains(`active`)) {
+                        images[j].classList.remove(`active`);
+                    }
+                    if (allRadioButtons[j].getAttribute(`checked`,`checked`) === `checked`) {
+                        allRadioButtons[j].removeAttribute(`checked`);
+                    }
+                }
+
                 allRadioButtons[i-1].setAttribute(`checked`,`checked`);
-                images[i].classList.remove(`active`);
                 images[i-1].classList.add(`active`);
                 return;
             }
@@ -111,17 +121,32 @@ rightArrow.addEventListener(`click`, () => {
     for(let i = 0; i < allRadioButtons.length; i++) {
 
             if(i === (images.length - 1) && allRadioButtons[i].getAttribute(`checked`,`checked`) === `checked`) {
-                allRadioButtons[i].removeAttribute(`checked`);
+
+                for(let j = 0; j < images.length; j++) {
+                    if (images[j].classList.contains(`active`)) {
+                        images[j].classList.remove(`active`);
+                    }
+                    if (allRadioButtons[j].getAttribute(`checked`,`checked`) === `checked`) {
+                        allRadioButtons[j].removeAttribute(`checked`);
+                    }
+                }
+
                 allRadioButtons[0].setAttribute(`checked`,`checked`);
-                images[i].classList.remove(`active`);
                 images[0].classList.add(`active`);
                 return;
 
             } else if(i !== (images.length - 1) && allRadioButtons[i].getAttribute(`checked`,`checked`) === `checked`){
                 
-                allRadioButtons[i].removeAttribute(`checked`);
+                for(let j = 0; j < images.length; j++) {
+                    if (images[j].classList.contains(`active`)) {
+                        images[j].classList.remove(`active`);
+                    }
+                    if (allRadioButtons[j].getAttribute(`checked`,`checked`) === `checked`) {
+                        allRadioButtons[j].removeAttribute(`checked`);
+                    }
+                }
+
                 allRadioButtons[i+1].setAttribute(`checked`,`checked`);
-                images[i].classList.remove(`active`);
                 images[i+1].classList.add(`active`);
                 return;
             }
